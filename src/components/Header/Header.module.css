@@ -1,0 +1,129 @@
+.header {
+  background-image: url("data:image/svg+xml, %3Csvg id='header' width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='100' cy='100' r='100' fill='%23FFAB08'/%3E%3C/svg%3E");
+  background-size: 611px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding: 24px 0 30px;
+  margin-bottom: 30px;
+}
+.container {
+  margin: 0 auto;
+}
+
+.logo {
+  width: 150px;
+  color: #fff;
+  margin: 0 auto 24px;
+}
+
+.wrapper {
+  padding-bottom: 246px;
+  background: url('../../assets/img/pic.svg') bottom/227px no-repeat;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 120%;
+  margin-bottom: 16px;
+}
+
+.red {
+  color: #FF5C00;
+}
+
+.appeal {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@media (min-width: 480px) {
+  .header {
+    background-size: 1400px;
+    padding-bottom: 44px;
+  }
+
+  .container {
+    max-width: 480px;
+  }
+
+  .wrapper {
+    padding-bottom: 0;
+    padding-left: 180px;
+    padding-top: 27px;
+    text-align: left;
+    background-position: left;
+    background-size: contain;
+    min-height: 190px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .header {
+    background-size: 2540px;
+  }
+
+  .container {
+    max-width: calc(562px + var(--padding-container) * 2);
+  }
+
+  .wrapper {
+    padding-left: 237px;
+    min-height: 229px;
+  }
+
+  .title {
+    font-size: 36px;
+    margin-bottom: 26px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    background-size: 2880px;
+    padding-bottom: 63px;
+    margin-bottom: 40px;
+  }
+
+  .container {
+    max-width: calc(764px + var(--padding-container) * 2);
+  }
+
+  .wrapper {
+    padding-top: 46px;
+    padding-left: 326px;
+    min-height: 326px;
+  }
+
+  .title {
+    font-size: 50px;
+    margin-bottom: 52px;
+  }
+
+  .appeal {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .container {
+    max-width: calc(784px + var(--padding-container) * 2);
+  }
+
+  .wrapper {
+    padding-left: 346px;
+  }
+}
+
+
+@media (min-width: 1920px) {
+  .header {
+    background-size: 4660px;
+  }
+}

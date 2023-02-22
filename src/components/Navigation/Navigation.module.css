@@ -1,0 +1,111 @@
+.navigation {
+    margin-bottom: 30px;
+  }
+  
+  .container {
+    padding: 0;
+    min-width: 100vw;
+  }
+  
+  .list {
+    display: flex;
+    padding: 0 calc((100vw / 2) - (var(--container) / 2));
+    overflow-x: auto;
+    overflow-y: hidden;
+    column-gap: 8px;
+  }
+  
+  .button {
+    border-radius: 50px;
+    padding: 7px 8px 7px 40px;
+    font-size: 12px;
+    line-height: 16px;
+    white-space: nowrap;
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    background-position: 8px center;
+  }
+  
+  .button:hover,
+  .button:focus-visible  {
+    outline: 1px solid #F86310;
+    outline-offset: -1px;
+  }
+  
+  @supports not selector(:focus-visible) {
+    .button:focus  {
+      outline: 1px solid #F86310;
+      outline-offset: -1px;
+    }
+  }
+  
+  .button_active {
+    pointer-events: none;
+    background-color: #FFAB08;
+  }
+  
+  .button_active:focus {
+    outline: none;
+  }
+  
+  .button_burger {
+    background-image: url('../../assets/img/burger.png');
+  }
+  
+  .button_snack {
+    background-image: url('../../assets/img/snack.png');
+  }
+  
+  .button_hotdog {
+    background-image: url('../../assets/img/hot-dog.png');
+  }
+  
+  .button_combo {
+    background-image: url('../../assets/img/combo.png');
+  }
+  
+  .button_shawarma {
+    background-image: url('../../assets/img/shawarma.png');
+  }
+  
+  .button_pizza {
+    background-image: url('../../assets/img/pizza.png');
+  }
+  
+  .button_wok {
+    background-image: url('../../assets/img/wok.png');
+  }
+  
+  .button_dessert {
+    background-image: url('../../assets/img/dessert.png');
+  }
+  
+  .button_sauce {
+    background-image: url('../../assets/img/sauce.png');
+  }
+  
+  
+  @media (min-width: 768px) {
+    .list {
+      column-gap: 12px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .navigation {
+      margin-bottom: 50px;
+    }
+  
+    .list {
+      column-gap: 24px;
+    }
+  
+    .button {
+      padding: 9px 14px 9px 46px;
+      font-size: 16px;
+      line-height: 22px;
+      background-position: 14px center;
+    }
+  }
+  

@@ -1,0 +1,33 @@
+.container {
+    --container: 300px;
+    --padding-container: 10px;
+  
+    max-width: calc(var(--container) + var(--padding-container) * 2);
+    padding: 0 var(--padding-container);
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 480px) {
+    .container {
+      --container: 640px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      --padding-container: 64px
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      --container: 960px;
+      --padding-container: 32px
+    }
+  }
+  
+  @media (min-width: 1360px) {
+    .container {
+      --container: 1290px;
+    }
+  }
