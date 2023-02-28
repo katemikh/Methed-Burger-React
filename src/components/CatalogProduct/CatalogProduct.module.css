@@ -1,0 +1,124 @@
+.product {
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-radius: 12px;
+    min-height: 243px;
+    position: relative;
+  }
+  
+  .image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    margin-bottom: 4px;
+  }
+  
+  .title {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    flex-grow: 1;
+    margin-bottom: 4px;
+  }
+  
+  .detail {
+    outline: none;
+  }
+  
+  .detail:focus-visible,
+  .detail:hover {
+    color: #F86310;
+  }
+  
+  .detail:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    outline: 1px solid transparent;
+    border-radius: 12px;
+  }
+  
+  .detail:focus-visible:after {
+    outline-color: #F86310;
+  }
+  
+  .weight {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+    color: #B1B1B1;
+    margin-bottom: 7px;
+  }
+  
+  .add {
+    background: #F2F2F3;
+    border-radius: 8px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    padding: 9px;
+    transition: transform .1s ease, background-color .3s ease-in-out;
+  }
+  
+  .add:hover {
+    background-color: #FFAB08;
+  }
+  
+  .add:focus-visible {
+    background-color: #F86310;
+  }
+  
+  .add:active {
+    transform: translate(1px, 2px)
+  }
+  
+  .add:disabled {
+    background-color: #F9F9F9;
+    color: #ACACAC;
+  }
+  
+  @media (min-width: 1024px) {
+    .product {
+      padding: 12px;
+      border-radius: 18px;
+      min-height: 411px;
+    }
+  
+    .image {
+      height: 220px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+  
+    .price {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+  
+    .title {
+      font-size: 16px;
+    }
+  
+    .weight {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+  
+    .add {
+      border-radius: 12px;
+      font-size: 16px;
+      padding: 12px;
+    }
+  }

@@ -1,24 +1,34 @@
-import "./order.css";
+/* import "./order.css";
 import "./goods.css";
-import "./count.css";
+import "./count.css"; */
+import style from "./Order.module.css";
+import { OrderGoods } from "../OrderGoods/OrderGoods";
 
-export const Order =() => {
+const orderList = ["Super Cheesie", "Fries", "Hot Hot-Dog"];
+
+export const Order = () => {
 
     return (
-        <div className="catalog__order order">
-        <section className="order__wrapper">
-          <div className="order__header" tabindex="0" role="button">
-            <h2 className="order__title">Basket</h2>
+        <div className={style.order}>
+        <section className={style.wrapper}>
+          <div className={style.header} tabIndex="0" role="button">
+            <h2 className={style.title}>Basket</h2>
 
-            <span className="order__count">4</span>
+            <span className={style.count}>4</span>
           </div>
 
-          <div className="order__wrap_list">
-            <ul className="order__list">
-              <li className="order__item">
-                <img className="order__image" src="img/burger_1.jpg" alt="Super Cheesie"/>
+          <div className={style.wrap_list}>
+            <ul className={style.list}>
 
-                <div className="order__goods goods">
+            {orderList.map((item, i) => <OrderGoods key={i} item={item}/>)}
+
+           {/*  <li className="item">
+              <OrderGoods />
+            </li> */}
+{/*               <li className="item">
+                <img className="image" src="img/burger_1.jpg" alt="Super Cheesie"/>
+
+                <div className="goods">
                   <h3 className="goods__title">Super Cheesie</h3>
 
                   <p className="goods__weight">512g</p>
@@ -33,12 +43,12 @@ export const Order =() => {
                   <p className="count__amount">1</p>
                   <button className="count__plus">+</button>
                 </div>
-              </li>
+              </li> */}
 
-              <li className="order__item">
-                <img className="order__image" src="img/free_1.jpg" alt="Fries"/>
+             {/*  <li className="item">
+                <img className="image" src="img/free_1.jpg" alt="Fries"/>
 
-                <div className="order__goods goods">
+                <div className="goods goods">
                   <h3 className="goods__title">Fries</h3>
 
                   <p className="goods__weight">180g</p>
@@ -53,12 +63,12 @@ export const Order =() => {
                   <p className="count__amount">2</p>
                   <button className="count__plus">+</button>
                 </div>
-              </li>
+              </li> */}
 
-              <li className="order__item">
-                <img className="order__image" src="img/hot-dog_1.jpg" alt="Hot Hot-Dog"/>
+              {/* <li className="item">
+                <img className="image" src="img/hot-dog_1.jpg" alt="Hot Hot-Dog"/>
 
-                <div className="order__goods goods">
+                <div className="goods goods">
                   <h3 className="goods__title">Hot Hot-Dog</h3>
 
                   <p className="goods__weight">245g</p>
@@ -73,27 +83,27 @@ export const Order =() => {
                   <p className="count__amount">1</p>
                   <button className="count__plus">+</button>
                 </div>
-              </li>
+              </li> */}
             </ul>
 
-            <div className="order__total">
+            <div className={style.total}>
               <p>Итого</p>
               <p>
-                <span className="order__amount">1279</span>
+                <span className={style.amount}>1279</span>
                 <span className="currency">$</span>
               </p>
             </div>
 
-            <button className="order__submit">Make an Order</button>
+            <button className={style.submit}>Make an Order</button>
 
-            <div className="order__apeal">
-              <p className="order__text">Free Delivery</p>
-              <button className="order__close">Roll up</button>
+            <div className={style.apeal}>
+              <p className={style.text}>Free Delivery</p>
+              <button className={style.close}>Roll up</button>
             </div>
           </div>
         </section>
       </div>
-    )
+    );
 }
 
 
