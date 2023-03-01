@@ -26,7 +26,7 @@ useEffect(() => {
 
         <ul className={style.list}>
           {category.map((item, i) => 
-            <li key={item.id} className={style.item}>
+            <li key={item.i} className={style.item}>
 
             <button 
             className={classNames(
@@ -37,7 +37,7 @@ useEffect(() => {
                 dispatch(changeCategory({indexCategory: i}))
               }}
               >
-            {item.en}
+            {item.title}
             </button>
           </li>
         )}
