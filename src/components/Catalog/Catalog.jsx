@@ -1,38 +1,50 @@
+import { useDispatch, useSelector } from "react-redux";
 import { CatalogProduct } from "../CatalogProduct/CatalogProduct";
 import { Container } from "../Container/Container";
 import { Order } from "../Order/Order";
 import style  from "./Catalog.module.css";
+import { productRequestAsync } from "../../store/product/productSlice";
+import { useEffect } from "react";
 //import "./product.css"; 
 
 // temporary catalog
-const goodsList = [
+/* const goodsList = [
   { title: 'Meat Bomb' },
   { title: 'Super Cheesie' },
   { title: 'Satisfying' },
   { title: 'Italian' },
   { title: 'Classic' },
   { title: 'Heavy Blow' },
-];
+]; */
 
 export const Catalog = () => {
+
+  const { products } = useSelector(state => state.product);
+  const dispatch = useDispatch();
+  const {category, activeCategory} = useSelector(state => state.category);
+
+  useEffect(() => {
+    if (category.length) {
+      dispatch(productRequestAsync(category[activeCategory].title));
+    }
+    
+  }, [category, activeCategory])
 
     return (
         <section className={style.catalog}>
         <Container className={style.container}>
         
-         <Order />
+        <Order />
   
           <div className={style.wrapper}>
-            <h2 className={style.title}>Burgers</h2>
+            <h2 className={style.title}>{category[activeCategory]?.en}</h2>
   
             <div className={style.wrap_list}>
               <ul className={style.list}>
 
-              {goodsList.map((item, i) => (
-                <li key={i} className={style.item}>
-                <CatalogProduct title={item.title} />
-                {/* {item.title} */}
-                 {/* article moved to CatalogProduct.jsx */}
+              {products.map(item => (
+                <li key={item.id} className={style.item}>
+                <CatalogProduct item={item} />
                 </li>
               ))}
                 

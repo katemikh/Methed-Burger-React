@@ -1,35 +1,40 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { API_URI, POSTFIX } from "../../const";
 
 
     const initialState = {
-        category: [
-          { title: 'burger', en: 'Burgers', image: '/img/burger.png' },
-          { title: 'snack', en: 'Snacks', image: '/img/snack.png' },
-          { title: 'hot-dog', en: 'Hot-Dogs', image: '/img/hot-dog.png' },
-          { title: 'combo', en: 'Combo', image: '/img/combo.png' },
-          { title: 'shawarma', en: 'Shawarma', image: '/img/shawarma.png' },
-          { title: 'pizza', en: 'Pizza', image: '/img/pizza.png' },
-          { title: 'wok', en: 'Wok', image: '/img/wok.png' },
-          { title: 'dessert', en: 'Desserts', image: '/img/dessert.png' },
-          { title: 'sauce', en: 'Sauces', image: '/img/sauce.png' },
-        ],
+        category: [],
         error: '',
         activeCategory: 0,
       };
+export const categoryRequestAsync = createAsyncThunk(
+  "category/fetch", () =>  fetch(`${API_URI}${POSTFIX}/category`)
+    .then(req => req.json())
+    .catch(error => ({ error }))
+  )
 
 const categorySlice = createSlice ({
-    name: "category" ,
+    name: "category",
     initialState ,
     reducers: {
-changeCategory(state, action) {
-  //console.log("action: ", action);
-  //console.log("state: ", state);
-
-  state.activeCategory = action.payload.indexCategory
+    changeCategory(state, action) {
+      state.activeCategory = action.payload.indexCategory
 }
+},
+
+extraReducers: {
+[categoryRequestAsync.pending.type] : (state) => {
+state.error = "";
+},
+[categoryRequestAsync.fulfilled.type] : (state, action) => {
+  state.error = "";
+  state.category = action.payload;
+  },
+[categoryRequestAsync.rejected.type] : (state, action) => {
+  state.error = action.payload.error;
+  }
 }
 });
 
-export const { changeCategory } = categorySlice.actions;
-
+export const {changeCategory} = categorySlice.actions;
 export default categorySlice.reducer;
