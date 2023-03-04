@@ -22,7 +22,21 @@ const categorySlice = createSlice ({
 }
 },
 
-extraReducers: {
+extraReducers: (builder) => {
+builder 
+  .addCase(categoryRequestAsync.pending,  (state) => {
+    state.error = "";
+  })
+  .addCase(categoryRequestAsync.fulfilled,  (state, action) => {
+      state.error = "";
+      state.category = action.payload;
+  })
+  .addCase(categoryRequestAsync.rejected,  (state, action) => {
+        state.error = action.payload.error;
+  })
+},
+
+/* extraReducers2: {
 [categoryRequestAsync.pending.type] : (state) => {
 state.error = "";
 },
@@ -34,7 +48,8 @@ state.error = "";
   state.error = action.payload.error;
   }
 }
-});
+*/
+}); 
 
 export const {changeCategory} = categorySlice.actions;
 export default categorySlice.reducer;

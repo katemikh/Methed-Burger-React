@@ -1,5 +1,6 @@
 import { Container } from "../Container/Container";
 import "./footer.css";
+import logo from "../../assets/img/logo-o.svg";
 
     export const Footer = () => {
 
@@ -7,7 +8,7 @@ import "./footer.css";
     <footer className="footer">
     <Container className="container">
       <div className="content">
-        <img className="logo" src="../../assets/img/logo-o.svg" alt="Logo YourMeal" />
+        <img className="logo" src={logo}  alt="Logo YourMeal" />
 
         <address className="address">
           <div className="contact">

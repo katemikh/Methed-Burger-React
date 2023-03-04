@@ -16,7 +16,7 @@ const dispatch = useDispatch();
    <img src={`${API_URI}/${item.image}`} alt={item.title} className={style.image}/>
 
     <p className={style.price}>
-    {item.price}<span className="currency">$</span>
+    {item.price}<span className="currency">&nbsp;$</span>
     </p>
 
     <h3 className={style.title}>

@@ -40,13 +40,18 @@ export const Catalog = () => {
             <h2 className={style.title}>{category[activeCategory]?.en}</h2>
   
             <div className={style.wrap_list}>
-              <ul className={style.list}>
 
+            {products.length ? (
+              <ul className={style.list}>
               {products.map(item => (
                 <li key={item.id} className={style.item}>
                 <CatalogProduct item={item} />
                 </li>
               ))}
+              </ul>
+            ) : (
+            <p className={style.empty}> Sorry, there are no products in this category.</p>
+            )}
                 
   
 {/*    --canceled block-left only one li look up!             <li className="item"> 
@@ -128,7 +133,7 @@ export const Catalog = () => {
                     <button className="product__add" type="button">Add</button>
                   </article>
                 </li> */}
-              </ul>
+             
             </div>
           </div>
         </Container>

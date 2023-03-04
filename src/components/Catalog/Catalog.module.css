@@ -20,6 +20,11 @@
   gap: 10px;
 }
 
+.empty {
+  font-size: 1.6em;
+  color: red;
+}
+
 
 @media (min-width: 1024px) {
   .catalog {
